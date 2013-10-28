@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="title" content="Ses">
+
+<title>Ses</title>
+
+<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.ba-dotimeout.js" type="text/javascript"></script>
+
+<script src="jplayer/jquery.jplayer.min.js" type="text/javascript"></script>
+<link href="jplayer/skin/jplayer.blue.monday.css" rel="stylesheet" type="text/css" >
+
+<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css" >
+
+
+<style type="text/css">
+html, body {
+	margin:0; padding:0;
+	height:100%;
+}
+
+body {
+	background:url('tile-navyblue.jpg') #000055;
+	font-family:Georgia, Times, serifs;
+}
+
+.classname {
+vertical-align:top;
+	align:center;
+	-moz-box-shadow:inset 0px 1px 4px -1px #97c4fe;
+	-webkit-box-shadow:inset 0px 1px 4px -1px #97c4fe;
+	box-shadow:inset 0px 1px 4px -1px #97c4fe;
+	
+	background-color:#fff;
+	-webkit-border-top-left-radius:20px;
+	-moz-border-radius-topleft:20px;
+	border-top-left-radius:20px;
+	-webkit-border-top-right-radius:20px;
+	-moz-border-radius-topright:20px;
+	border-top-right-radius:20px;
+	-webkit-border-bottom-right-radius:20px;
+	-moz-border-radius-bottomright:20px;
+	border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-bottomleft:20px;
+	border-bottom-left-radius:20px;
+
+	
+	text-indent:0;
+	border:1px solid #337fed;
+	display:inline-block;
+	color:#333;
+	
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	line-height:40px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #eee;
+	cursor:pointer;
+	
+	margin-right:5px;
+	
+	padding:3px;
+	min-width:92px;
+	min-height:80px;
+}
+.classname:hover {
+	background-color:#ccc;
+}
+
+.classname:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+.classname2 {
+vertical-align:top;
+	align:center;
+	-moz-box-shadow:inset 0px 1px 4px -1px #97c4fe;
+	-webkit-box-shadow:inset 0px 1px 4px -1px #97c4fe;
+	box-shadow:inset 0px 1px 4px -1px #97c4fe;
+	
+	background-color:#eee;
+
+	-webkit-border-top-left-radius:10px;
+	-moz-border-radius-topleft:10px;
+	border-top-left-radius:10px;
+	-webkit-border-top-right-radius:10px;
+	-moz-border-radius-topright:10px;
+	border-top-right-radius:10px;
+	-webkit-border-bottom-right-radius:10px;
+	-moz-border-radius-bottomright:10px;
+	border-bottom-right-radius:10px;
+	-webkit-border-bottom-left-radius:10px;
+	-moz-border-radius-bottomleft:10px;
+	border-bottom-left-radius:10px;
+	
+	text-indent:0;
+	border:2px solid #337fed;
+	display:inline-block;
+	color:#333;
+	
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	line-height:40px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #eee;
+	cursor:pointer;
+	
+	margin-right:5px;
+	
+	padding:3px;
+	min-width:90px;
+	min-height:80px;
+}
+.classname2:hover {
+	background-color:#ccc;
+}
+
+.classname2:active {
+	position:relative;
+	top:1px;
+}
+
+
+	
+.satir { 
+	margin:5px; 
+	align:top;
+	margin-left:15px;
+	
+}
+
+
+.AnaPanel {
+
+	width:700px;
+	height:630px;
+	
+	position:absolute;
+	
+	top:85px;
+	left:5px;
+	
+	background-color: #ffffff;
+	border: 2px solid #444444;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+
+
+	-moz-box-shadow: 0px 0px 13px #000000;
+	-webkit-box-shadow: 0px 0px 13px #000000;
+	box-shadow: 0px 0px 13px #000000;
+}
+
+.baslik {
+
+	color: white;
+	font-family: Helvetica Neue,Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif;
+	
+	font-size: 16px;
+	text-shadow: 0 1px 1px rgba(11, 11, 11, 0.5);
+	padding:5px;
+	
+	background-color:#114466;
+	margin-bottom:5px;
+}
+
+.YaziPanel {
+
+
+	width:700px;
+	height:70px;
+	overflow:hidden;
+	
+	position:absolute;
+	top:5px;
+	left:5px;
+	
+	background-color: #ffffff;
+	border: 2px solid #444444;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+
+
+	-moz-box-shadow: 0px 0px 13px #000000;
+	-webkit-box-shadow: 0px 0px 13px #000000;
+	box-shadow: 0px 0px 13px #000000;
+}
+
+
+.konusdugme {
+cursor:pointer;
+ margin-top:12px;
+ margin-right:15px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+	box-shadow:inset 0px 1px 0px 0px #f5978e;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f) );
+	background:-moz-linear-gradient( center top, #f24537 5%, #c62d1f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f');
+	background-color:#f24537;
+	-webkit-border-top-left-radius:20px;
+	-moz-border-radius-topleft:20px;
+	border-top-left-radius:20px;
+	-webkit-border-top-right-radius:20px;
+	-moz-border-radius-topright:20px;
+	border-top-right-radius:20px;
+	-webkit-border-bottom-right-radius:20px;
+	-moz-border-radius-bottomright:20px;
+	border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-bottomleft:20px;
+	border-bottom-left-radius:20px;
+	text-indent:0;
+	border:1px solid #d02718;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:normal;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width:86px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #810e05;
+}
+.konusdugme:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537) );
+	background:-moz-linear-gradient( center top, #c62d1f 5%, #f24537 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537');
+	background-color:#c62d1f;
+}.konusdugme:active {
+	position:relative;
+	top:1px;
+}
+
+</style>
+
+
+</head>
+
+
+<BODY>
+
+<div id="Background_Audio_Player" class="jp-jplayer"></div>
+
+		<div id="Panel2" class="YaziPanel">
+		
+		<div id="Konusma" style="width:560px; height:80px; overflow-x:scroll; overflow-y:hidden; white-space: nowrap;">
+		</div>
+		
+		<div class="konusdugme" style="display:inline-block; position:absolute; top:0px; right:0px; ">Konuş</div>
+		
+		</div>
+
+		<div id="AnaPanel" class="AnaPanel">
+		<div class="baslik">Ana Sayfa</div>
+			<div id="Satir" class="satir">
+				<div class="classname" data-OkuMetin="ben"> <img src="resimler/i.png" style="height:40px"><br> Ben</div>
+				<div class="classname" data-OkuMetin="dir"> <img src="resimler/is.png" style="height:40px"><br> -dır</div>
+				<div class="classname" data-OkuMetin="ne"> <img src="resimler/what.png" style="height:40px"><br> Ne?</div>
+				<div class="classname" data-OkuMetin="nerede"> <img src="resimler/where.png" style="height:40px"><br> Nerede?</div>
+				<div class="classname" data-OkuMetin="yok"> <img src="resimler/not.png" style="height:40px"><br> Yok</div>
+				<div class="classname" data-OkuMetin="daha"> <img src="resimler/more.png" style="height:40px"><br> Daha</div>
+			</div>
+			
+			<div id="Satir" class="satir">
+				<div class="classname" data-OkuMetin="sen"> <img src="resimler/you.png" style="height:40px"><br> Sen</div>
+				<div class="classname" data-OkuMetin="istiyorum"> <img src="resimler/want.png" style="height:40px"><br> İstemek</div>
+				<div class="classname" data-OkuMetin="yapiyorum"> <img src="resimler/do.png" style="height:40px"><br> Yapmak</div>
+				<div class="classname" data-OkuMetin="de"> <img src="resimler/have.png" style="height:40px"><br> Sahip Olmak</div>
+				<div class="classname" data-OkuMetin="ac"> <img src="resimler/on.png" style="height:40px"><br> Aç</div>
+				<div class="classname" data-OkuMetin="tamam"> <img src="resimler/all_done.png" style="height:40px"><br> Tamam</div>
+			</div>
+
+			<div id="Satir" class="satir">
+				<div class="classname" data-OkuMetin="o"> <img src="resimler/it.png" style="height:40px"><br> O</div>
+				<div class="classname" data-OkuMetin="gidiyorum"> <img src="resimler/go.png" style="height:40px"><br> Gitmek</div>
+				<div class="classname" data-OkuMetin="seviyorum"> <img src="resimler/like.png" style="height:40px"><br> Sevmek</div>
+				<div class="classname" data-OkuMetin="goruyorum"> <img src="resimler/see.png" style="height:40px"><br> Görmek</div>
+				<div class="classname" data-OkuMetin="kapat"> <img src="resimler/off.png" style="height:40px"><br> Kapat</div>
+				<div class="classname" data-OkuMetin="iyi"> <img src="resimler/good.png" style="height:40px"><br> İyi</div>
+			</div>
+
+			<div id="Satir" class="satir">
+				<div class="classname" data-OkuMetin="siz"> <img src="resimler/that.png" style="height:40px"><br> Siz</div>
+				<div class="classname" data-OkuMetin="dur"> <img src="resimler/stop.png" style="height:40px"><br> Dur</div>
+				<div class="classname" data-OkuMetin="aliyorum"> <img src="resimler/get.png" style="height:40px"><br> Almak</div>
+				<div class="classname" data-OkuMetin="yardim"> <img src="resimler/help.png" style="height:40px"><br> Yardım</div>
+				<div class="classname" data-OkuMetin="yukari"> <img src="resimler/up.png" style="height:40px"><br> Yukarı</div>
+				<div class="classname" data-OkuMetin="kotu"> <img src="resimler/bad.png" style="height:40px"><br> Kötü</div>
+			</div>
+			
+			<div id="Satir" class="satir">
+				<div class="classname2" > <img src="resimler/people.png" style="height:40px"><br> İnsanlar</div>
+				<div class="classname2" id="GiyimDugme" > <img src="resimler/actions.png" style="height:40px"><br> --Giyim--</div>
+				<div class="classname2" > <img src="resimler/little_words.png" style="height:40px"><br> Kısa Kısa</div>
+				<div class="classname2" > <img src="resimler/chat.png" style="height:40px"><br> Sohbet</div>
+				<div class="classname" data-OkuMetin="asagi"> <img src="resimler/down.png" style="height:40px"><br> Aşağı</div>
+				<div class="classname2" > <img src="resimler/describe.png" style="height:40px"><br> Anlatım</div>
+			</div>
+			
+			<div id="Satir" class="satir">
+				<div class="classname2" > <img src="resimler/things.png" style="height:40px"><br> Nesneler</div>
+				<div class="classname2" > <img src="resimler/food.png" style="height:40px"><br> Yemek</div>
+				<div class="classname2" > <img src="resimler/fun.png" style="height:40px"><br> Eğlence</div>
+				<div class="classname2" > <img src="resimler/places.png" style="height:40px"><br> Yerler</div>
+				<div class="classname2" > <img src="resimler/help2.png" style="height:40px"><br> Yardım</div>
+				<div class="classname2" > <img src="resimler/more2.png" style="height:40px"><br> Daha...</div>
+			</div>
+			
+		</div>
+		
+		<div id="AltPanel" class="AnaPanel">
+		<div class="baslik">Giyim</div>
+			<div id="Satir" class="satir">
+				<div class="classname" data-OkuMetin="benim"><span style="margin-top:20px; display:block">Benim</span></div>
+				<div class="classname" data-OkuMetin="pantalon"><span style="margin-top:20px; display:block">Pantalon</span></div>
+				<div class="classname" data-OkuMetin="kemer"><span style="margin-top:20px; display:block">Kemer</span></div>
+				<div class="classname" data-OkuMetin="bluz"><span style="margin-top:20px; display:block">Bluz</span></div>
+				<div class="classname" data-OkuMetin="dugme"><span style="margin-top:20px; display:block">Düğme</span></div>
+				<div class="classname" data-OkuMetin="kot"><span style="margin-top:20px; display:block">Kot</span></div>
+			</div>
+			
+			<div id="Satir" class="satir">
+				<div class="classname" data-OkuMetin="nerede"><span style="margin-top:20px; display:block">Nerede</span></div>
+				<div class="classname" data-OkuMetin="palto"><span style="margin-top:20px; display:block">Palto</span></div>
+				<div class="classname" data-OkuMetin="gecelik"><span style="margin-top:20px; display:block">Gecelik</span></div>
+				<div class="classname" data-OkuMetin="kot_ceket"><span style="margin-top:20px; display:block">Kot Ceket</span></div>
+				<div class="classname" data-OkuMetin="gomlek"><span style="margin-top:20px; display:block">Gömlek</span></div>
+				<div class="classname" data-OkuMetin="kisa_kollu"><span style="margin-top:20px; display:block">Kısa kollu</span></div>
+			</div>
+
+			<div id="Satir" class="satir">
+				<div class="classname" data-OkuMetin="eldiven"><span style="margin-top:20px; display:block">Eldiven</span></div>
+				<div class="classname" data-OkuMetin="sapka"><span style="margin-top:20px; display:block">Şapka</span></div>
+				<div class="classname" data-OkuMetin="atki"><span style="margin-top:20px; display:block">Atkı</span></div>
+				<div class="classname" data-OkuMetin="yagmurluk"><span style="margin-top:20px; display:block">Yağmurluk</span></div>
+				<div class="classname" data-OkuMetin="semsiye"><span style="margin-top:20px; display:block">Şemsiye</span></div>
+				<div class="classname" data-OkuMetin="bere"><span style="margin-top:20px; display:block">Bere</span></div>
+			</div>
+
+			<div id="Satir" class="satir">
+				<div class="classname" data-OkuMetin="etek"><span style="margin-top:20px; display:block">Etek</span></div>
+				<div class="classname" data-OkuMetin="kazak"><span style="margin-top:20px; display:block">Kazak</span></div>
+				<div class="classname" data-OkuMetin="kisort"><span style="margin-top:20px; display:block">Tişört</span></div>
+				<div class="classname" data-OkuMetin="camasir"><span style="margin-top:20px; display:block">Çamaşır</span></div>
+				<div class="classname" data-OkuMetin="spor_ceket"><span style="margin-top:20px; display:block">Spor Ceket</span></div>
+				<div class="classname" data-OkuMetin="esofman"><span style="margin-top:20px; display:block">Eşofman</span></div>
+			</div>
+			
+			<div id="Satir" class="satir">
+				<div class="classname" data-OkuMetin="ayakkabi"><span style="margin-top:20px; display:block">Ayakkabı</span></div>
+				<div class="classname" data-OkuMetin="corap"><span style="margin-top:20px; display:block">Çorap</span></div>
+				<div class="classname" data-OkuMetin="topuklu"><span style="margin-top:20px; display:block">Topuklu</span></div>
+				<div class="classname" data-OkuMetin="terlik"><span style="margin-top:20px; display:block">Terlik</span></div>
+				<div class="classname" data-OkuMetin="uzun_corap"><span style="margin-top:20px; display:block">Uzun Çorap</span></div>
+				<div class="classname2" id="OncekiSayfa"> <img src="resimler/describe.png" style="height:40px"><br> Önceki Sayfa</div>
+			</div>
+			
+			
+		</div>
+		
+
+
+
+<script type="text/javascript">
+
+//------------------------------------------------------------------------------------------------------------------
+	$(document).ready(function() {
+	
+		var KonusArrayClick = false;
+		var KonusArraySay = 0;
+		var KonusSay = 0;
+		var KonusArray = [];
+		
+		$("#AltPanel").hide();
+		
+		$("#GiyimDugme").bind('click touchstart', function(e) {
+			$("#AnaPanel").hide('slide', {direction: 'left'}, 500, function() {  } );
+			$("#AltPanel").show('slide', {direction: 'right'}, 500);
+			
+			e.preventDefault(); 
+		});
+
+		$("#OncekiSayfa").bind('click touchstart', function(e) {
+			$("#AnaPanel").show('slide', {direction: 'left'}, 500, function() {  } );
+			$("#AltPanel").hide('slide', {direction: 'right'}, 500);
+			e.preventDefault(); 
+		});
+
+		$("#Background_Audio_Player").jPlayer({
+			swfPath: "jplayer",
+			solution:"html,flash",
+			supplied: "mp3",
+			preload:"auto",
+			errorAlerts:false
+		});
+//		http://translate.google.com/translate_tts?ie=UTF-8&q=nas%C4%B1ls%C4%B1n%3F&tl=tr&total=1&idx=0&textlen=9&prev=input
+//						  http://translate.google.com/translate_tts?ie=UTF-8&q=bug%C3%BCn%20nas%C4%B1ls%C4%B1n%3F&tl=tr&total=1&idx=0&textlen=15&prev=input
+
+
+		$(".konusdugme").bind('click touchstart', function(e) {
+			$("#Background_Audio_Player").jPlayer("setMedia", { mp3: KonusArray[1] }).jPlayer("play");
+			KonusArraySay = 1;
+			KonusArrayClick = true;
+			 e.preventDefault(); 
+		});
+
+
+		
+		$("#Background_Audio_Player").bind($.jPlayer.event.ended,
+			function(event) {
+			
+				if (KonusArrayClick)
+				{
+					KonusArraySay++;
+					if (KonusArraySay<=KonusSay)
+					{
+						$("#Background_Audio_Player").jPlayer("setMedia", { mp3: KonusArray[KonusArraySay] }).jPlayer("play");
+					} else
+					{
+						KonusArrayClick = false;
+						KonusArray = [];
+						KonusSay = 0;
+						$("#Konusma").html("");
+					}
+				}
+				
+		});
+		
+		
+		$(".classname").bind('click touchstart', function(e) {
+			$("#Background_Audio_Player").jPlayer("setMedia", { mp3: "ses/"+$(this).data("okumetin")+".mp3"  }).jPlayer("play");
+			$("#Konusma").append("<div style='display:inline-block; padding-left:20px; padding-top:5px; '><center>" +$(this).html() +"</center></div>" );
+			
+			KonusArrayClick = false;
+			KonusSay++;
+			KonusArray[KonusSay] = "ses/"+$(this).data("okumetin")+".mp3";
+			 e.preventDefault(); 
+			
+		} );
+
+		
+		/*
+		$.doTimeout( '', 350, function(){
+			$("#Background_Audio_Player").jPlayer("setMedia", { mp3: "http://translate.google.com/translate_tts?tl=tr&q=nas%C4%B1ls%C4%B1n%20bug%C3%BCn%20sen?" }).jPlayer("play");
+		});
+		*/
+		
+	});
+
+/*
+	$("#Background_Audio_Player").bind($.jPlayer.event.ended,
+		function(event) {
+			$("#Background_Audio_Player").jPlayer("play", 0); //loop background audio
+	});
+		
+$("#Background_Audio_Player").jPlayer("setMedia", { mp3: BgAudioFile }).jPlayer("play");
+
+	$("#Background_Audio_Player").jPlayer("stop");
+	$("#Background_Audio_Player").jPlayer( "clearMedia" );
+			$("#Background_Audio_Player").jPlayer("volume", VolumeValue/100 );
+*/
+</script>
+	
+	
+</body>
+
+
+
+</html>
