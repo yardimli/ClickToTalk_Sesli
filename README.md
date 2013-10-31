@@ -15,6 +15,7 @@ With audio files, the user could record while still speaking.
 
 With 3G it would work everywhere.
 
+--------------------------------------------------------
 
 Improvments to make:
 
